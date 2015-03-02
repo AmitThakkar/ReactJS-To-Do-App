@@ -29,7 +29,7 @@ var ToDo = React.createClass({
     return (
       <div>
       Task: {this.props.task}
-        <a href="javascript:void(0);" onClick={this.props.removeTask}>X</a>
+        <a href="javascript:void(0);" onClick={this.removeTask}>X</a>
       </div>
     );
   }
