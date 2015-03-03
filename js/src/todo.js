@@ -13,9 +13,9 @@ var NewToDoBox = React.createClass({
   },
   render: function () {
     return (
-      <div>
-      Add New Task:
-        <input type="text" ref="todo" />
+      <div className='newToDoBox'>
+        <span>Add New Task: </span>
+        <input className='todoInputBox' type="text" ref="todo" />
         <input type="button" value="Add" onClick={this.addTask} />
       </div>
     );
@@ -27,11 +27,10 @@ var ToDo = React.createClass({
   },
   render: function () {
     return (
-      <div>
-        <div class="todoTask">
-          {this.props.index + 1}. {this.props.task}
-          <a href="javascript:void(0);" onClick={this.removeTask}>{this.props.actionText}</a>
-        </div>
+      <div className='todoTask'>
+        <span className='todoIndex'>{this.props.index + 1}.</span>
+        <span className='todoText'>{this.props.task}</span>
+        <img className='rightClick' src="./images/greenCheck.png" onClick={this.removeTask} />
       </div>
     );
   }
@@ -44,26 +43,7 @@ var ToDoList = React.createClass({
     var that = this;
     var todoNodes = this.props.todos.map(function (todo, index) {
       return (
-        <ToDo index={index} task={todo} actionText="Done" removeTask={that.removeTask} />
-      );
-    });
-    return (
-      <div>
-        <h4>To Do List: </h4>
-        {todoNodes}
-      </div>
-    );
-  }
-});
-var ToDoList = React.createClass({
-  removeTask: function (index) {
-    this.props.removeTask(index);
-  },
-  render: function () {
-    var that = this;
-    var todoNodes = this.props.todos.map(function (todo, index) {
-      return (
-        <ToDo index={index} task={todo} actionText="Done" removeTask={that.removeTask} />
+        <ToDo index={index} task={todo} removeTask={that.removeTask} />
       );
     });
     return (

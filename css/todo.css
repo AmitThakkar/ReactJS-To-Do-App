@@ -6,6 +6,18 @@
   color: white;
   padding: 5px;
 }
-.todoTask {
-  text-align: left;
+.todoTask .todoIndex {
+  font-weight: bold;
+}
+.todoTask .todoText {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.todoTask .rightClick {
+  width: 20px;
+  height: 20px;
+}
+#todoContainer .newToDoBox .todoInputBox {
+  margin-left: 15px;
+  margin-right: 15px;
 }
