@@ -1,0 +1,11 @@
+#todoContainer {
+  text-align: center;
+}
+#todoContainer h1 {
+  background: black;
+  color: white;
+  padding: 5px;
+}
+.todoTask {
+  text-align: left;
+}

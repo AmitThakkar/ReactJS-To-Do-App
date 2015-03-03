@@ -28,25 +28,47 @@ var ToDo = React.createClass({
   render: function () {
     return (
       <div>
-      Task: {this.props.task}
-        <a href="javascript:void(0);" onClick={this.removeTask}>X</a>
+        <div class="todoTask">
+          {this.props.index + 1}. {this.props.task}
+          <a href="javascript:void(0);" onClick={this.removeTask}>{this.props.actionText}</a>
+        </div>
       </div>
     );
   }
 });
 var ToDoList = React.createClass({
-  removeTask: function(index) {
+  removeTask: function (index) {
     this.props.removeTask(index);
   },
   render: function () {
     var that = this;
     var todoNodes = this.props.todos.map(function (todo, index) {
       return (
-        <ToDo index={index} task={todo} removeTask={that.removeTask} />
+        <ToDo index={index} task={todo} actionText="Done" removeTask={that.removeTask} />
       );
     });
     return (
       <div>
+        <h4>To Do List: </h4>
+        {todoNodes}
+      </div>
+    );
+  }
+});
+var ToDoList = React.createClass({
+  removeTask: function (index) {
+    this.props.removeTask(index);
+  },
+  render: function () {
+    var that = this;
+    var todoNodes = this.props.todos.map(function (todo, index) {
+      return (
+        <ToDo index={index} task={todo} actionText="Done" removeTask={that.removeTask} />
+      );
+    });
+    return (
+      <div>
+        <h4>To Do List: </h4>
         {todoNodes}
       </div>
     );
