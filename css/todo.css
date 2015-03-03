@@ -6,6 +6,11 @@
   color: white;
   padding: 5px;
 }
+.todoTask {
+  width: 200px;
+  margin-left: 565px;
+  text-align: left;
+}
 .todoTask .todoIndex {
   font-weight: bold;
 }
@@ -16,6 +21,8 @@
 .todoTask .rightClick {
   width: 20px;
   height: 20px;
+  position: relative;
+  left: 150px;
 }
 #todoContainer .newToDoBox .todoInputBox {
   margin-left: 15px;
