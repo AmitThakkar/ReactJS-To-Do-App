@@ -22,7 +22,7 @@ var NewToDoBox = React.createClass({
   }
 });
 var RightClickIcon = React.createClass({
-  render: function() {
+  render: function () {
     return (
       <img className='rightClick' src="./images/greenCheck.png" onClick={this.props.removeTask} />
     );
@@ -34,10 +34,13 @@ var ToDo = React.createClass({
   },
   render: function () {
     return (
-      <div className='todoTask'>
-        <span className='todoIndex'>{this.props.index + 1}.</span>
-        <span className='todoText'>{this.props.task}</span>
-        <RightClickIcon removeTask={this.removeTask} />
+      <div>
+        <div className='todoTask'>
+          <span className='todoIndex'>{this.props.index + 1}.</span>
+          <span className='todoText'>{this.props.task}</span>
+          <RightClickIcon removeTask={this.removeTask} />
+        </div>
+        <div className="clear"></div>
       </div>
     );
   }
